@@ -7122,6 +7122,7 @@ Game.Launch=function()
 		}
 
 		//define objects
+
 		new Game.Object('Cursor','cursor|cursors|clicked|[X] extra finger|[X] extra fingers','Autoclicks once every 10 seconds.',0,0,{},15,function(me){
 			var add=0;
 			if (Game.Has('Thousand fingers')) add+=		0.1;
@@ -7258,6 +7259,13 @@ Game.Launch=function()
 		});
 		//Game.last.minigameUrl='minigameDungeon.js';//not yet
 		//Game.last.minigameName='Dungeon';
+		new Game.Object('Mega gode','mega gode|mega godes|made from pure dicks|[X] feet long|[X] feets long','Turns dicks into more dicks producing cookies.',16,20,{base:'gode',xV:8,yV:64,w:64,rows:1,x:0,y:0},0,function(me){
+			var mult=1;
+			mult*=Game.GetTieredCpsMult(me);
+			return me.baseCps*mult;
+		},function(){
+			Game.UnlockTiered(this);
+		});
 
 		new Game.Object('Bank','bank|banks|banked|Interest rates [X]% better|Interest rates [X]% better','Generates cookies from interest.',6,15,{base:'bank',xV:8,yV:4,w:56,rows:1,x:0,y:13},0,function(me){
 			var mult=1;
@@ -7374,14 +7382,6 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock(this.grandma.name);
 		});
 
-		new Game.Object('Mega gode','mega gode|mega godes|made from pure dicks|[X] feet long|[X] feets long','Turns dicks into more dicks producing cookies.',16,20,{base:'gode',xV:8,yV:64,w:64,rows:1,x:0,y:0},500,function(me){
-			var mult=1;
-			mult*=Game.GetTieredCpsMult(me);
-			return me.baseCps*mult;
-		},function(){
-			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock(this.grandma.name);
-		});
 
 		Game.foolObjects={
 			'Unknown':{name:'Investment',desc:'You\'re not sure what this does, you just know it means profit.',icon:0},
