@@ -7259,7 +7259,7 @@ Game.Launch=function()
 		});
 		//Game.last.minigameUrl='minigameDungeon.js';//not yet
 		//Game.last.minigameName='Dungeon';
-		new Game.Object('Mega gode','mega gode|mega godes|made from pure dicks|[X] feet long|[X] feets long','Turns dicks into more dicks producing cookies.',16,20,{base:'gode',xV:8,yV:64,w:64,rows:1,x:0,y:0},0,function(me){
+		new Game.Object('Mega gode','mega gode|mega godes|made from pure dicks|[X] feet long|[X] feets long','Turns dicks into more dicks producing cookies.',17,20,{base:'gode',xV:8,yV:64,w:64,rows:1,x:0,y:0},0,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			return me.baseCps*mult;
